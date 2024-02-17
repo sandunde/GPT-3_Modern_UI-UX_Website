@@ -1,0 +1,49 @@
+/* Base styles */
+.dashboard-container {
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.dashboard-header-left {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    font-size: 25px;
+}
+
+.dashboard-header-right {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-details {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+}
+
+.dashboard-acc-type {
+    font-size: 15px;
+    color: rgb(209, 209, 209);
+}
+
+.dashboard-acc-name {
+    font-size: 20px;
+}
+
+/* Mobile optimization */
+@media only screen and (max-width: 768px) {
+    .dashboard-header-left {
+        gap: 0.5rem; /* Adjusted for smaller screens */
+    }
+    .dashboard-details {
+        text-align: center; /* Center align text on smaller screens */
+    }
+}

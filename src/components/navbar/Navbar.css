@@ -14,12 +14,12 @@
 }
 
 .gpt3__navbar-links_logo{
+    margin-bottom: 0.5rem;
     margin-right: 2rem;
 }
 
 .gpt3__navbar-links_logo img{
-    width: 62.56px;
-    height: 16.02px;
+    width: 5rem;
 }
 
 .gpt3__navbar-links_container{
@@ -97,6 +97,21 @@
 
 .gpt3__navbar-menu_container-links-sign{
     display: none;
+}
+
+.model-footer{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.model-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 2rem;
 }
 
 @media screen and (max-width: 1050px) {

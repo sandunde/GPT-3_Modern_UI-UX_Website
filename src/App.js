@@ -1,27 +1,21 @@
-import React from 'react'
-
-import { Footer,Blog,Features,Header,Possibility, WhatGPT3  } from "./containers"
-import { CTA, Brand , Navbar } from "./components"
-import "./App.css"
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Signin from "./pages/dashboard/Dashboard";
+import "./App.css";
 
 const App = () => {
   return (
-    <div className='APP'>
-      <div className='gradient__bg'>
-        <Navbar />
-        <Header />
-      </div>
-      <Brand />
-      <WhatGPT3 />
-      <Features />
-      <Possibility />
-      <CTA />
-      <Blog />
-      <Footer />
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="dashboard" element={<Signin />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </div>
+  );
+};
 
-  )
-}
-
-export default App
- 
+export default App;
