@@ -6,6 +6,50 @@
 
 .dashboard-header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0 20px;
+  }
+  
+  .dashboard-header img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .dashboard-header-left {
+    flex: 1;
+  }
+  
+  .dashboard-header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .dashboard-header-right img {
+    width: 50px;
+    margin-left: 20px;
+  }
+/*   
+  @media screen and (max-width: 768px) {
+    .dashboard-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .dashboard-header-right {
+      margin-top: 10px;
+    }
+  
+    .dashboard-header-right img {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  } */
+  
+
+/* .dashboard-header {
+    display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
@@ -20,6 +64,12 @@
 
 .dashboard-header-right {
     display: flex;
+    align-items: center;
+} */
+
+.submit-button{
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -41,9 +91,9 @@
 /* Mobile optimization */
 @media only screen and (max-width: 768px) {
     .dashboard-header-left {
-        gap: 0.5rem; /* Adjusted for smaller screens */
+        gap: 0.5rem;
     }
     .dashboard-details {
-        text-align: center; /* Center align text on smaller screens */
+        text-align: center; 
     }
 }

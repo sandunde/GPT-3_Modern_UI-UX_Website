@@ -13,7 +13,8 @@ const style = {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 800,
+    width: "90%", // Adjusted for responsiveness
+    maxWidth: 800, // Maximum width
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
@@ -52,17 +53,14 @@ const WebCam = () => {
         const formData = new FormData();
         formData.append("image", selectedFile);
 
-        // Example using fetch:
         fetch("/upload", {
             method: "POST",
             body: formData,
         })
             .then((response) => {
-                // Handle response from server
                 console.log("File uploaded successfully!");
             })
             .catch((error) => {
-                // Handle errors
                 console.error("Error uploading file:", error);
             });
     };
@@ -75,12 +73,14 @@ const WebCam = () => {
     const handleSave = () => {
         setIsOpen(false);
         setSaveImage(true);
+        localStorage.setItem("capturedImage", imageData);
     };
 
     const handleToggle = () => {
         setLabel(label === "Take Picture" ? "Upload Photo" : "Take Picture");
         setUploadImg(!uploadImg);
     };
+
     return (
         <div className="main-photo-container">
             <div className="photo-container">
@@ -91,6 +91,7 @@ const WebCam = () => {
                                 audio={false}
                                 ref={webcamRef}
                                 screenshotFormat="image/jpeg"
+                                className="webcam" // Add className for styling
                             />
                             {!isImageTake && (
                                 <Button
@@ -103,7 +104,7 @@ const WebCam = () => {
                             )}
                         </>
                     ) : (
-                        <img src={imageData} alt="Captured image" />
+                        <img src={imageData} alt="Captured image" className="captured-image" /> // Add className for styling
                     )
                 ) : (
                     <div className="upload-photo-container">
